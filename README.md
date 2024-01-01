@@ -1,4 +1,4 @@
-# My Python Template
+# Acompanhamento dos jogos da Mega Sena
 
 ```sh
 mamba env create
@@ -13,6 +13,5 @@ pip-compile setup.cfg --resolver backtracking -o requirements-dev.txt --extra de
 
 ## Run
 ```sh
-# start docker:
-sh scripts/00_start.sh
+python -m streamlit run src/demo.py
 ```

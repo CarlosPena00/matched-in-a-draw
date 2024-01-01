@@ -4,6 +4,8 @@
 #
 #    pip-compile --extra=dev --output-file=requirements-dev.txt setup.cfg
 #
+altair==5.2.0
+    # via streamlit
 annotated-types==0.6.0
     # via pydantic
 anyio==4.2.0
@@ -33,6 +35,10 @@ black==23.12.1
     # via megasena (setup.cfg)
 bleach==6.1.0
     # via nbconvert
+blinker==1.7.0
+    # via streamlit
+cachetools==5.3.2
+    # via streamlit
 certifi==2023.11.17
     # via
     #   httpcore
@@ -47,6 +53,7 @@ charset-normalizer==3.3.2
 click==8.1.7
     # via
     #   black
+    #   streamlit
     #   uvicorn
 comm==0.2.0
     # via ipykernel
@@ -74,6 +81,10 @@ flake8==6.1.0
     # via megasena (setup.cfg)
 fqdn==1.5.1
     # via jsonschema
+gitdb==4.0.11
+    # via gitpython
+gitpython==3.1.40
+    # via streamlit
 h11==0.14.0
     # via
     #   httpcore
@@ -90,6 +101,8 @@ idna==3.6
     #   httpx
     #   jsonschema
     #   requests
+importlib-metadata==6.11.0
+    # via streamlit
 iniconfig==2.0.0
     # via pytest
 ipdb==0.13.13
@@ -109,16 +122,19 @@ jedi==0.19.1
     # via ipython
 jinja2==3.1.2
     # via
+    #   altair
     #   jupyter-server
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
+    #   pydeck
 json5==0.9.14
     # via jupyterlab-server
 jsonpointer==2.4
     # via jsonschema
 jsonschema[format-nongpl]==4.20.0
     # via
+    #   altair
     #   jupyter-events
     #   jupyterlab-server
     #   nbformat
@@ -156,6 +172,8 @@ jupyterlab-pygments==0.3.0
     # via nbconvert
 jupyterlab-server==2.25.2
     # via jupyterlab
+markdown-it-py==3.0.0
+    # via rich
 markupsafe==2.1.3
     # via
     #   jinja2
@@ -166,6 +184,8 @@ matplotlib-inline==0.1.6
     #   ipython
 mccabe==0.7.0
     # via flake8
+mdurl==0.1.2
+    # via markdown-it-py
 mistune==3.0.2
     # via nbconvert
 mypy==1.8.0
@@ -190,11 +210,18 @@ nodeenv==1.8.0
 notebook-shim==0.2.3
     # via jupyterlab
 numpy==1.26.2
-    # via megasena (setup.cfg)
+    # via
+    #   altair
+    #   megasena (setup.cfg)
+    #   pandas
+    #   pyarrow
+    #   pydeck
+    #   streamlit
 overrides==7.4.0
     # via jupyter-server
 packaging==23.2
     # via
+    #   altair
     #   black
     #   ipykernel
     #   jupyter-server
@@ -202,6 +229,11 @@ packaging==23.2
     #   jupyterlab-server
     #   nbconvert
     #   pytest
+    #   streamlit
+pandas==2.1.4
+    # via
+    #   altair
+    #   streamlit
 pandocfilters==1.5.0
     # via nbconvert
 parso==0.8.3
@@ -210,6 +242,8 @@ pathspec==0.12.1
     # via black
 pexpect==4.9.0
     # via ipython
+pillow==10.1.0
+    # via streamlit
 platformdirs==4.1.0
     # via
     #   black
@@ -223,6 +257,8 @@ prometheus-client==0.19.0
     # via jupyter-server
 prompt-toolkit==3.0.43
     # via ipython
+protobuf==4.25.1
+    # via streamlit
 psutil==5.9.7
     # via ipykernel
 ptyprocess==0.7.0
@@ -231,6 +267,8 @@ ptyprocess==0.7.0
     #   terminado
 pure-eval==0.2.2
     # via stack-data
+pyarrow==14.0.2
+    # via streamlit
 pycodestyle==2.11.1
     # via flake8
 pycparser==2.21
@@ -239,20 +277,27 @@ pydantic==2.5.3
     # via fastapi
 pydantic-core==2.14.6
     # via pydantic
+pydeck==0.8.1b0
+    # via streamlit
 pyflakes==3.1.0
     # via flake8
 pygments==2.17.2
     # via
     #   ipython
     #   nbconvert
+    #   rich
 pytest==7.4.4
     # via megasena (setup.cfg)
 python-dateutil==2.8.2
     # via
     #   arrow
     #   jupyter-client
+    #   pandas
+    #   streamlit
 python-json-logger==2.0.7
     # via jupyter-events
+pytz==2023.3.post1
+    # via pandas
 pyyaml==6.0.1
     # via
     #   jupyter-events
@@ -268,7 +313,9 @@ referencing==0.32.0
     #   jsonschema-specifications
     #   jupyter-events
 requests==2.31.0
-    # via jupyterlab-server
+    # via
+    #   jupyterlab-server
+    #   streamlit
 rfc3339-validator==0.1.4
     # via
     #   jsonschema
@@ -277,6 +324,8 @@ rfc3986-validator==0.1.1
     # via
     #   jsonschema
     #   jupyter-events
+rich==13.7.0
+    # via streamlit
 rpds-py==0.16.2
     # via
     #   jsonschema
@@ -289,6 +338,8 @@ six==1.16.0
     #   bleach
     #   python-dateutil
     #   rfc3339-validator
+smmap==5.0.1
+    # via gitdb
 sniffio==1.3.0
     # via
     #   anyio
@@ -299,18 +350,27 @@ stack-data==0.6.3
     # via ipython
 starlette==0.32.0.post1
     # via fastapi
+streamlit==1.29.0
+    # via megasena (setup.cfg)
+tenacity==8.2.3
+    # via streamlit
 terminado==0.18.0
     # via
     #   jupyter-server
     #   jupyter-server-terminals
 tinycss2==1.2.1
     # via nbconvert
+toml==0.10.2
+    # via streamlit
+toolz==0.12.0
+    # via altair
 tornado==6.4
     # via
     #   ipykernel
     #   jupyter-client
     #   jupyter-server
     #   jupyterlab
+    #   streamlit
     #   terminado
 traitlets==5.14.0
     # via
@@ -334,14 +394,23 @@ typing-extensions==4.9.0
     #   mypy
     #   pydantic
     #   pydantic-core
+    #   streamlit
+tzdata==2023.4
+    # via pandas
+tzlocal==5.2
+    # via streamlit
 uri-template==1.3.0
     # via jsonschema
 urllib3==2.1.0
     # via requests
 uvicorn==0.25.0
     # via megasena (setup.cfg)
+validators==0.22.0
+    # via streamlit
 virtualenv==20.25.0
     # via pre-commit
+watchdog==3.0.0
+    # via streamlit
 wcwidth==0.2.12
     # via prompt-toolkit
 webcolors==1.13
@@ -352,6 +421,8 @@ webencodings==0.5.1
     #   tinycss2
 websocket-client==1.7.0
     # via jupyter-server
+zipp==3.17.0
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
