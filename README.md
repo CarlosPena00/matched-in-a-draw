@@ -1,14 +1,14 @@
-# Acompanhamento dos jogos da Mega Sena
+# How many numbers were matched in a draw
+
+The idea of ​​this project is to quickly create a Python application to check how many numbers were matched in a draw
 
 ```sh
-mamba env create
-conda activate megasena
-pip-sync requirements-dev.txt
-pre-commit install
+make
+micromamba activate megasena
 
 # After update `setup.cfg`
-pip-compile setup.cfg --resolver backtracking -o requirements.txt
-pip-compile setup.cfg --resolver backtracking -o requirements-dev.txt --extra dev
+make lockdeps
+make deps
 ```
 
 ## Run
